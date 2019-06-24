@@ -20,17 +20,11 @@ class StudentsController extends Controller
     {
         //
         //function(){
-            $search = Input::get( 'search' );
-            $user = Fees::where('student_number','=','.$search.')->get();
-            if(count($user) > 0)
-            {
-                return view('100192.students')->withDetails($user)->withQuery ( $search );
-            }
-                else return view ('100192.students')->withMessage('No Details found.');
+            
         //}
        
-        //$students = Fees::all();
-        //return view('100192.students')->with('students', $students);
+        //$students = Fees::all()->with('students', $students);
+        return view('100192.students');
     }
 
     /**
@@ -116,5 +110,13 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(){
+        $search = Input::get( 'search' );
+            $user = Fees::where('student_number','=',''.$search.'')->get();
+            if(count($user) > 0)
+                return view('100192.students')->withDetails($user)->withQuery ( $search );
+            else return view ('100192.students')->withMessage('No Details found.');
     }
 }

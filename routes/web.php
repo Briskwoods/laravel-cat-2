@@ -21,4 +21,4 @@ Route::get('/', 'PagesController@home')->name('home');
 Route::resource('fees', 'FeesController');
 Route::resource('students', 'StudentsController') ;
 
-Route::any('/search', 'StudentsController@index');
+Route::any('/search', 'StudentsController@search');
