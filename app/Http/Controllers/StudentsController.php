@@ -21,10 +21,12 @@ class StudentsController extends Controller
         //
         //function(){
             $search = Input::get( 'search' );
-            $user = Fees::where('student_number','=',''.$search.'')->get();
+            $user = Fees::where('student_number','=','.$search.')->get();
             if(count($user) > 0)
+            {
                 return view('100192.students')->withDetails($user)->withQuery ( $search );
-            else return view ('100192.students')->withMessage('No Details found.');
+            }
+                else return view ('100192.students')->withMessage('No Details found.');
         //}
        
         //$students = Fees::all();
