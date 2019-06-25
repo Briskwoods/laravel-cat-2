@@ -59,10 +59,17 @@ class StudentsController extends Controller
         $students->last_name = $request->input('lname');
         $students->email = $request->input('email');
         $students->student_number = $request->input('student_number');
-        $students->save();
 
-        return redirect('/students/create')->with('success','Student Successfully Registered.');
-    }
+        try{
+            $students->save();
+            }
+            catch(QueryException $ex)
+            {
+                return redirect('/students/create')->with('error','Registration Failed.');
+            }
+            finally{
+                return redirect('/students/create')->with('success','Student Successfully Registered.');
+            } }
 
     /**
      * Display the specified resource.
