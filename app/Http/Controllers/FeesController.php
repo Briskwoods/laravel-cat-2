@@ -49,10 +49,17 @@ class FeesController extends Controller
         $fee->name_of_payer = $request->input('name_of_payer');
         $fee->student_number = $request->input('student_number');
         $fee->amount_paid = $request->input('amount');
+        try{
         $fee->save();
-
-        return redirect('/fees')->with('success','Student Fees Updated.');
-    }
+        }
+        catch(QueryException $ex)
+        {
+            return redirect('/fees')->with('error','Registration Failed.');
+        }
+        finally{
+            return redirect('/fees')->with('success','Student Fees Updated.');
+        }
+            }
 
     /**
      * Display the specified resource.
