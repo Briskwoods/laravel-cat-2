@@ -56,9 +56,9 @@ class FeesController extends Controller
         {
             return redirect('/fees')->with('error','Registration Failed.');
         }
-        finally{
-            return redirect('/fees')->with('success','Student Fees Updated.');
-        }
+        
+        return redirect('/fees')->with('success','Student Fees Updated.');
+        
             }
 
     /**

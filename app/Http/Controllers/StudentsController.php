@@ -67,9 +67,9 @@ class StudentsController extends Controller
             {
                 return redirect('/students/create')->with('error','Registration Failed.');
             }
-            finally{
-                return redirect('/students/create')->with('success','Student Successfully Registered.');
-            } }
+                
+            return redirect('/students/create')->with('success','Student Successfully Registered.');             
+        }
 
     /**
      * Display the specified resource.
