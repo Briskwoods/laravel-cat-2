@@ -55,7 +55,7 @@ class FeesController extends Controller
         }
         catch(QueryException $ex)
         {
-            return redirect('/fees')->with('error','Registration Failed.');
+            return redirect('/fees')->with('error','Payment Failed. Check Account Information');
         }
         
         return redirect('/fees')->with('success','Student Fees Updated.');
