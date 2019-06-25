@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 use App\Fees;
 use App\Students;
