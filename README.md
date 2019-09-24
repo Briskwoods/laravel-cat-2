@@ -1,2 +1,2 @@
 # laravel-cat-2
-Boii. If I could fight code. No hesitation.
+Simple Website to input student records, student fees, search for fees and check the total fees paid.
